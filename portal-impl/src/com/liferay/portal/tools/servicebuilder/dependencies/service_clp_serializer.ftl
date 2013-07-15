@@ -131,6 +131,9 @@ public class ClpSerializer {
 	</#list>
 
 	public static Object translateInput(Object obj) {
+		if (obj == null) {
+			return null;
+		}
 		if (obj instanceof BaseModel<?>) {
 			return translateInput((BaseModel<?>)obj);
 		}
@@ -173,6 +176,9 @@ public class ClpSerializer {
 	}
 
 	public static Object translateOutput(Object obj) {
+		if (obj == null) {
+			return null;
+		}
 		if (obj instanceof BaseModel<?>) {
 			return translateOutput((BaseModel<?>)obj);
 		}
